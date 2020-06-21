@@ -41,6 +41,7 @@ blockquote {
 blockquote code {
   @apply font-serif;
   @apply italic;
+  @apply whitespace-pre-wrap;
 }
 img {
   @apply mt-0;

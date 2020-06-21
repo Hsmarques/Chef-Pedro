@@ -21,11 +21,11 @@ function BlogPage(props) {
       <SEO keywords={[`chef`, `Pedro`, `receitas`, `instagram`, `pão`]} title={post.title} />
 
       <section className="bg-white">
-        <article className="flex flex-col items-center p-4 md:pt-24 md:px-20 md:pb-16 ">
+        <article className="flex flex-col items-center p-4 md:pt-16 md:px-10 md:pb-16 lg:pt-24 lg:px-20 lg:pb-16">
           <p className="text-xs">{post.createdAt}</p>
           <h1 className="text-3xl text-center">{post.title}</h1>
           <div
-            className="mt-2 md:px-16 blog-body"
+            className="mt-2 md:px-16 blog-body w-full whitespace-normal"
             dangerouslySetInnerHTML={{
               __html: post.body.childMarkdownRemark.html,
             }}
