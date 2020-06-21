@@ -23,7 +23,9 @@ function Layout({ children, blogHeroImage }) {
           </div>
         </div>
       )}
-      <main className="flex-1 w-full max-w-5xl px-4 py-8 mx-auto md:px-8 md:py-16">{children}</main>
+      <main className="flex-1 w-full max-w-5xl px-4 py-0 mx-auto md:px-8 md:py-4 lg:py-16">
+        {children}
+      </main>
 
       <footer className="bg-white">
         <h2 className="flex content-center text-center justify-center whitespace-pre text-gray-700 text-xl my-4 px-2 flex-col md:flex-row">
