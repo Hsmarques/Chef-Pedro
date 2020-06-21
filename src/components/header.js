@@ -14,8 +14,8 @@ function Header() {
   `)
 
   return (
-    <header className="bg-white sticky top-0 shadow-xs">
-      <div className="flex flex-wrap items-center justify-between max-w-4xl p-4 mx-auto md:p-8">
+    <header className="bg-white sticky top-0 shadow-xs z-10">
+      <div className="flex flex-wrap items-center justify-between max-w-5xl p-4 mx-auto md:p-8">
         <Link to="/">
           <h1 className="flex items-center text-gray-700 no-underline">
             <ChefHat />
@@ -48,8 +48,8 @@ function Header() {
               title: `About`,
             },
             {
-              route: `/contact`,
-              title: `Contact`,
+              route: `/blog`,
+              title: `Blog`,
             },
           ].map((link) => (
             <Link

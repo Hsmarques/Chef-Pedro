@@ -21,5 +21,35 @@ img {
   @apply rounded-lg;
   @apply my-4;
 }
+ul {
+  @apply list-disc;
+  @apply pl-10;
+}
+ol {
+  @apply list-decimal;
+  @apply pl-10;
+}
+code {
+  @apply font-mono;
+}
+blockquote {
+  @apply my-4;
+  @apply border-l-2;
+  @apply border-orange-400;
+  @apply pl-4;
+}
+blockquote code {
+  @apply font-serif;
+  @apply italic;
+}
+img {
+  @apply mt-0;
+  @apply rounded-b-none;
+}
+.blog-body img {
+  @apply mt-4;
+  @apply rounded-lg;
+}
+
 /*! purgecss end ignore */
 @tailwind utilities;

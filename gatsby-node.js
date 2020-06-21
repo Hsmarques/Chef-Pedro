@@ -6,15 +6,23 @@ exports.createPages = ({ graphql, actions }) => {
 
   return new Promise((resolve, reject) => {
     const blogPost = path.resolve('./src/templates/blog-post.js')
+    const blogPostsPage = path.resolve('./src/templates/blog-posts-page.js')
     resolve(
       graphql(
         `
           {
-            allContentfulBlogPost {
+            allContentfulBlogPost(sort: { order: ASC, fields: createdAt }) {
               edges {
                 node {
-                  title
+                  id
                   slug
+                  title
+                  createdAt(formatString: "MMMM Do, YYYY")
+                  body {
+                    childMarkdownRemark {
+                      html
+                    }
+                  }
                 }
               }
             }
@@ -35,6 +43,10 @@ exports.createPages = ({ graphql, actions }) => {
               slug: post.node.slug,
             },
           })
+        })
+        createPage({
+          path: `/blog/`,
+          component: blogPostsPage,
         })
       })
     )

@@ -18,14 +18,14 @@ function BlogPage(props) {
 
   return (
     <Layout>
-      <SEO keywords={[`chef`, `Pedro`, `receitas`, `instagram`, `pão`]} title="About" />
+      <SEO keywords={[`chef`, `Pedro`, `receitas`, `instagram`, `pão`]} title={post.title} />
 
-      <section className="bg-white md:m-6">
+      <section className="bg-white">
         <article className="flex flex-col items-center p-4 md:pt-24 md:px-20 md:pb-16 ">
-          <p className="text-xs">{post.updatedAt}</p>
+          <p className="text-xs">{post.createdAt}</p>
           <h1 className="text-3xl text-center">{post.title}</h1>
           <div
-            className="mt-2 md:px-12"
+            className="mt-2 md:px-16 blog-body"
             dangerouslySetInnerHTML={{
               __html: post.body.childMarkdownRemark.html,
             }}
@@ -55,24 +55,19 @@ export const pageQuery = graphql`
     contentfulBlogPost(slug: { eq: $slug }) {
       id
       title
-      updatedAt(formatString: "MMMM Do, YYYY")
+      createdAt(formatString: "MMMM Do, YYYY")
       body {
         childMarkdownRemark {
           html
         }
       }
     }
-    allContentfulBlogPost(sort: { order: ASC, fields: updatedAt }) {
+    allContentfulBlogPost(sort: { order: ASC, fields: createdAt }) {
       edges {
         node {
           id
           slug
-          updatedAt(formatString: "MMMM Do, YYYY")
-          body {
-            childMarkdownRemark {
-              html
-            }
-          }
+          createdAt(formatString: "MMMM Do, YYYY")
         }
         next {
           slug
