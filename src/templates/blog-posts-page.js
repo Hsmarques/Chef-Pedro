@@ -30,7 +30,7 @@ function BlogPostsPage(props) {
 
   return (
     <Layout blogHeroImage={heroImage}>
-      <SEO keywords={[`chef`, `Pedro`, `receitas`, `instagram`, `pão`]} title="Blogs Page" />
+      <SEO keywords={[`chef`, `Pedro`, `receitas`, `instagram`, `pão`]} title="Chef Pedro Blog" />
       <section className="text-gray-700 body-font">
         <div className="container py-8 mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
